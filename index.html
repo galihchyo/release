@@ -20,7 +20,8 @@
 
     <!-- Isi form dipindahkan dari form HTML sebelumnya -->
 
-<form action="/submit-lagu" method="POST" enctype="multipart/form-data">
+<form action="https://script.google.com/macros/s/AKfycbxMSuD8-8av9-9vuqQ9qV9G0rjTXQvgAJKeUa1vETmLh-n3Y7Kfh2_9W6Cm0RFxLR2AhA/exec" method="POST" enctype="multipart/form-data">
+
   <div class="section">
     <label for="judul">Judul Lagu</label>
     <input type="text" id="judul" name="judul_lagu" placeholder="Isi sesuai dengan Judul Lagu Anda" required>
@@ -91,7 +92,7 @@
       <div id="coverContent">
         <span>📤<br>Drag and drop your cover art,<br>or click to browse</span>
       </div>
-      <input type="file" id="coverUpload" name="cover_art" accept="image/*" onchange="previewCover(event)">
+      <input type="file" id="coverInput" name="cover_art" style="display: none;">
     </label>
     <div class="tips">
       <strong>Cover art requirements</strong><br>
@@ -108,9 +109,7 @@
   <button class="submit-btn" type="submit">Submit Lagu</button>
 </form>
 
-<input type="file" id="realUpload" style="display: none;" accept="audio/*" onchange="alert('Track uploaded!')">
-
-  </form>
+<input type="file" id="realUpload" name="track" style="display: none;" accept="audio/*" required>
 
   <script src="script.js"></script>
 </body>
