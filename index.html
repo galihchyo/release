@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Lagu - Malindo Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="malindo-header">
+    <div class="logo-container">
+      <img src="Gambar/LogoMG.jpg" alt="Malindo Group Logo" class="logo">
+      <span class="brand-name">Malindo Group</span>
+    </div>
+  </header>
+
+  <h1>Formulir Rilis Lagu</h1>
+
+    <!-- Isi form dipindahkan dari form HTML sebelumnya -->
+
+<form action="/submit-lagu" method="POST" enctype="multipart/form-data">
+  <div class="section">
+    <label for="judul">Judul Lagu</label>
+    <input type="text" id="judul" name="judul_lagu" required>
+
+    <label for="artist">Nama Artist</label>
+    <input type="text" id="artist" name="nama_artist" required>
+
+    <label for="composer">Composer</label>
+    <input type="text" id="composer" name="composer">
+
+    <label for="vocal">Composer Vocal</label>
+    <select id="vocal" name="composer_vocal" required>
+    <option value="" disabled selected>Pilih Nama Composer</option>
+    <option value="">Felix Fulvian Alfarizi</option>
+    <option value="">Arifin Ilham Aditya Januar</option>
+    <option value="">Moh Teguh Malindo</option>
+    <option value="">Fahrel Arco Fahrozi</option>
+    <option value="">Iqball Hakim Hasibuan</option>
+    <option value="">Muhammad Muslih</option>
+    <option value="">Di Luar Daftar</option>
+    </select>
+
+    <label for="kategori_musik">Category Music</label>
+    <select id="kategori_musik" name="kategori_musik" required>
+      <option value="" disabled selected>Pilih Category Music</option>
+      <option>Mashup Only</option>
+      <option>Drop Melody</option>
+      <option>Drop & Mashup</option>
+    </select>
+
+    <label for="kategori_katalog">Category Catalog</label>
+    <select id="kategori_katalog" name="kategori_katalog" required>
+      <option value="" disabled selected>Pilih Category Catalog</option>
+      <option>Mashup Only</option>
+      <option>Katalog Malindo Group</option>
+      <option>Non Katalog</option>
+    </select>
+
+    <label for="label">Nama Label</label>
+    <select id="label" name="nama_label" required>
+      <option value="" disabled selected>Pilih Nama Lable</option>
+      <option>Malindo Group</option>
+      <option>FM Media.Idp</option>
+      <option>XG Music Group</option>
+      <option>RB Music.Ltd</option>
+    </select>
+
+    <label for="youtube">Link YouTube</label>
+    <input type="url" id="youtube" name="youtube_link" placeholder="https://youtube.com/..." required>
+  </div>
+
+    <!-- Silakan copy-paste seluruh isi <div class="section">...</div> -->
+
+    <div class="section">
+  <label for="track">Track List</label>
+  <div class="dropdown">
+    <div class="dropdown-input" onclick="toggleDropdown()">Select tracks in your assets or upload audio files</div>
+    <button type="button" class="submit-btn" onclick="triggerUpload()">⬆ Upload new tracks</button>
+    </div>
+  </div>
+  
+
+  <!-- 🎧 Audio preview muncul di sini -->
+  <div id="audioPreview" style="margin-top: 16px; font-size: 14px; color: #333;"></div>
+
+  <div class="tips">
+    <strong>Tips:</strong><br>
+    One or more track files can be selected to upload.<br>
+    Specifications: 2 channel (stereo) WAV format, 16–24 bit depth, 44.1 kHz minimum sample rate, more than 2 seconds duration.
+  </div>
+</div>
+
+
+ <!-- Upload Cover Art Section -->
+<div class="section">
+  <label for="coverUpload">Upload Cover Art</label>
+  <div class="cover-upload">
+    <label class="cover-box" id="coverBox">
+      <div id="coverContent">
+        <span>📤<br>Drag and drop your cover art,<br>or click to browse</span>
+      </div>
+      <input type="file" id="coverUpload" name="cover_art" accept="image/*" onchange="previewCover(event)">
+    </label>
+    <div class="tips">
+      <strong>Cover art requirements</strong><br>
+      ● Size: 3000 - 5000 pixels (perfect square)<br>
+      ● Format: JPG, TIFF or PNG (Max. 36 MB; RGB mode)<br><br>
+      <strong>You must own</strong> the rights of the artwork and every image or visual element in it. The information on the artwork has to be consistent with all the information entered in the release metadata.<br><br>
+      <strong>Stores will reject</strong> blurry images, low quality, or if it contains any URL, email, phone number, barcode, price or registered trademark logos. Also, it must not contain any explicit or outrageous material such as pornography or hate speech.
+    </div>
+  </div>
+</div>
+
+    <!-- hingga tombol Submit Lagu dari file asli ke dalam bagian ini -->
+
+  <button class="submit-btn" type="submit">Submit Lagu</button>
+</form>
+
+<input type="file" id="realUpload" style="display: none;" accept="audio/*" onchange="alert('Track uploaded!')">
+
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
