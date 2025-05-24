@@ -23,24 +23,21 @@
 <form action="/submit-lagu" method="POST" enctype="multipart/form-data">
   <div class="section">
     <label for="judul">Judul Lagu</label>
-    <input type="text" id="judul" name="judul_lagu" required>
+    <input type="text" id="judul" name="judul_lagu" placeholder="Isi sesuai dengan Judul Lagu Anda" required>
 
     <label for="artist">Nama Artist</label>
-    <input type="text" id="artist" name="nama_artist" required>
+    <input type="text" id="artist" name="nama_artist" placeholder="Isi sesuai dengan Nama Artist Anda" required>
 
     <label for="composer">Composer</label>
-    <input type="text" id="composer" name="composer">
-
-    <label for="vocal">Composer Vocal</label>
-    <select id="vocal" name="composer_vocal" required>
-    <option value="" disabled selected>Pilih Nama Composer</option>
-    <option value="">Felix Fulvian Alfarizi</option>
-    <option value="">Arifin Ilham Aditya Januar</option>
-    <option value="">Moh Teguh Malindo</option>
-    <option value="">Fahrel Arco Fahrozi</option>
-    <option value="">Iqball Hakim Hasibuan</option>
-    <option value="">Muhammad Muslih</option>
-    <option value="">Di Luar Daftar</option>
+    <input type="text" id="composer" name="composer" placeholder="Isi sesuai dengan Nama Pencipta, Gunakan nama asli untuk drop melody" required>
+    
+    <label for="kategori_katalog">Category Catalog</label>
+    <select id="kategori_katalog" name="kategori_katalog" required>
+      <option value="" disabled selected>Pilih Category Catalog</option>
+      <option>Catalog Mashup Hormor Malindo Group</option>
+      <option>Catalog Malindo Music Publishing</option>
+      <option>Catalog Megabayz</option>
+      <option>Catalog RPH</option>
     </select>
 
     <label for="kategori_musik">Category Music</label>
@@ -49,14 +46,6 @@
       <option>Mashup Only</option>
       <option>Drop Melody</option>
       <option>Drop & Mashup</option>
-    </select>
-
-    <label for="kategori_katalog">Category Catalog</label>
-    <select id="kategori_katalog" name="kategori_katalog" required>
-      <option value="" disabled selected>Pilih Category Catalog</option>
-      <option>Mashup Only</option>
-      <option>Katalog Malindo Group</option>
-      <option>Non Katalog</option>
     </select>
 
     <label for="label">Nama Label</label>
