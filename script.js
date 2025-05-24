@@ -34,7 +34,7 @@ function previewCover(event) {
       height < 3000 || height > 5000 ||
       width !== height
     ) {
-      alert('Ukuran gambar harus persegi dengan dimensi antara 3000x3000 hingga 5000x5000 piksel.');
+      alert('Please ensure the cover art image size is between 3000 - 5000 px.');
       event.target.value = '';
     } else {
       // Tampilkan preview (jika diinginkan)
